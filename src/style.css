@@ -6,8 +6,4 @@ body {
   background-color: #f4f4f4;
 }
 
-.books-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
+

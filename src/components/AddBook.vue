@@ -1,16 +1,18 @@
 <template>
-  <div class="add-book p-6 bg-white rounded-lg shadow-lg">
-    <form @submit.prevent="submitBook" class="flex flex-col gap-4">
-      <input v-model="name" placeholder="Book Name" class="input" required />
-      <input v-model="image" placeholder="Image URL" class="input" required />
-      <textarea v-model="description" placeholder="Description" class="input" required></textarea>
+<div class="mb-8">
+      <h2 class="text-xl font-bold mb-4">Add New Book</h2>
+      <div class="flex space-x-4">
+    <form @submit.prevent="submitBook" class="flex space-x-4">
+      <input v-model="name" placeholder="Book Name" class="input border rounded-md p-2 w-80" required />
+      <input v-model="image" placeholder="Image URL" class="input border rounded-md p-2 w-80" required />
+      <input v-model="description" placeholder="Description" class="input border rounded-md p-2 w-80" required />
       <button
         type="submit"
-        class="btn bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700"
-      >
+        class="btn bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600">
         Add Book
       </button>
     </form>
+  </div>
   </div>
 </template>
 
