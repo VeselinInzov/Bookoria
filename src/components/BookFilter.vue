@@ -3,20 +3,22 @@
     <input
       v-model="filterValue"
       @input="updateFilter"
-      placeholder="Filter by name"
+      placeholder="Search by Title"
       class="input w-full"
     />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
-const filterValue = ref('');
-const emit = defineEmits(['update-filter']);
-const updateFilter = () => {
-  emit('update-filter', filterValue.value);
-};
+    import { ref } from 'vue';
+
+    const filterValue = ref('');
+    const emit = defineEmits(['update-filter']);
+    const updateFilter = () => {
+      emit('update-filter', filterValue.value);
+        };
+
 </script>
 
 <style scoped>
