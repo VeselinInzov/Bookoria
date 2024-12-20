@@ -2,9 +2,9 @@
     <div>
         <div class="flex flex-wrap space-x-4 items-center">
             <form @submit.prevent="submitBook" class="flex space-x-4">
-                <input v-model="name" placeholder="Book Name" class="input border rounded-md p-2 w-64" required />
+                <input v-model="title" placeholder="Book Title" class="input border rounded-md p-2 w-64" required />
+                <input v-model="author" placeholder="Author" class="input border rounded-md p-2 w-64" required />
                 <input v-model="image" placeholder="Image URL" class="input border rounded-md p-2 w-64" />
-                <input v-model="description" placeholder="Description" class="input border rounded-md p-2 w-64" required />
                 <select v-model="state" class="input border rounded-md p-2 w-40" required>
                     <option value="Reading">Reading</option>
                     <option value="Finished">Finished</option>
@@ -22,23 +22,23 @@
 <script setup>
     import { ref } from 'vue';
 
-    const name = ref('');
+    const title = ref('');
     const image = ref('');
-    const description = ref('');
+    const author = ref('');
     const state = ref('Reading'); // Default state
 
     const emit = defineEmits(['add-book']);
     const submitBook = () => {
         const newBook = {
-            name: name.value,
+            title: title.value,
             image: image.value,
-            description: description.value,
+            author: author.value,
             state: state.value
         };
         emit('add-book', newBook);
-        name.value = '';
+        title.value = '';
         image.value = '';
-        description.value = '';
+        author.value = '';
         state.value = 'Reading';
     };
 </script>
@@ -51,6 +51,11 @@
         border-radius: 5px;
     }
 
+        .input:focus {
+            border-color: #5B211B;
+            outline: none;
+        }
+
     .btn {
         background-color: #5D201C;
         color: #ffffff;
@@ -61,8 +66,8 @@
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .btn:hover {
-        background-color: #C07764;
-        color: #ffffff;
-    }
+        .btn:hover {
+            background-color: #C07764;
+            color: #ffffff;
+        }
 </style>
