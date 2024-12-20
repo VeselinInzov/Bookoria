@@ -1,9 +1,9 @@
 <template>
     <div class="book-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transition-transform hover:scale-105">
-        <img :src="book.image || 'src/images/book-alt.png'"
+        <img :src="book.image || 'src/images/book-default.png'"
              alt="Book Cover"
              class="book-image rounded-md w-48 h-72 object-cover mb-4" />
-        <h3 class="font-semibold text-2xl text-center mb-2">{{ book.name }}</h3>
+        <h3 class="font-semibold text-2xl text-center mb-2">{{ book.title }}</h3>
         <p class="text-gray-700 text-center mb-4">{{ book.description }}</p>
 
         <!-- Dropdown for changing the book's state -->
@@ -117,8 +117,8 @@
         background-color: #fff;
     }
 
-    .state-dropdown:focus {
-        outline: none;
-        border-color: #d32f2f;
-    }
+        .state-dropdown:focus {
+            outline: none;
+            border-color: #d32f2f;
+        }
 </style>
